@@ -43,7 +43,8 @@ public class ForgetPwdActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.btn_next:
-
+                intent.setClass(context, SurePwdActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_yzm:
                 MyApp.ftptimecount.start();

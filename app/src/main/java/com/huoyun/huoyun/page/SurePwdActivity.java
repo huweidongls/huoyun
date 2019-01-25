@@ -32,10 +32,13 @@ public class SurePwdActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.rl_back})
+    @OnClick({R.id.rl_back, R.id.btn_sure})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.rl_back:
+                finish();
+                break;
+            case R.id.btn_sure:
                 String pwd = etNewPwd.getText().toString();
                 String newPwd = etNewPwdSure.getText().toString();
                 if(!TextUtils.isEmpty(pwd)&&!TextUtils.isEmpty(newPwd)){
