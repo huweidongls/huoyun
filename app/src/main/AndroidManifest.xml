@@ -29,18 +29,53 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".page.MainActivity">
-        </activity>
-        <activity android:name=".page.LoginActivity" >
+        <activity android:name=".page.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".page.MainActivity" />
+        <activity android:name=".page.LoginActivity"/>
         <activity android:name=".page.ForgetPwdActivity" />
         <activity android:name=".page.SurePwdActivity" />
-        <activity android:name=".page.RegisterActivity"></activity>
+        <activity android:name=".page.RegisterActivity" />
+        <activity android:name=".page.OrderActivity" />
+        <activity android:name=".page.PersonActivity" />
+        <activity
+            android:name="com.donkingliang.imageselector.ImageSelectorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.donkingliang.imageselector.PreviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.donkingliang.imageselector.ClipImageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Android 7.0 文件共享配置，必须配置 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="ovbH9tDk74DcpRTv59n1zEOkRrmdSPf2" />
+
+        <service android:name=".service.UploadLocationService" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
     </application>
 
 </manifest>

@@ -29,6 +29,8 @@
             android:layout_height="wrap_content" />
         
         <ImageView
+            android:layout_marginTop="3dp"
+            android:id="@+id/iv_isjiedan"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:src="@mipmap/off"
@@ -38,6 +40,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_person_info"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -46,6 +49,7 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/btn_modify_pwd"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -54,6 +58,7 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/btn_exit"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
