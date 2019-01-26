@@ -1,5 +1,6 @@
 package com.huoyun.huoyun.page;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +18,8 @@ import com.huoyun.huoyun.R;
 import com.huoyun.huoyun.adapter.MainAdapter;
 import com.huoyun.huoyun.service.UploadLocationService;
 import com.huoyun.huoyun.util.SpUtils;
+import com.vise.xsnow.permission.OnPermissionCallback;
+import com.vise.xsnow.permission.PermissionManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +50,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(MainActivity.this);
+
+        PermissionManager.instance().request(this, new OnPermissionCallback() {
+                    @Override
+                    public void onRequestAllow(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_allow) + "\n" + permissionName);
+                        Log.e("123123", "1"+permissionName);
+                    }
+
+                    @Override
+                    public void onRequestRefuse(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_refuse) + "\n" + permissionName);
+                        Log.e("123123", "2"+permissionName);
+                    }
+
+                    @Override
+                    public void onRequestNoAsk(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_noAsk) + "\n" + permissionName);
+                        Log.e("123123", "3");
+                    }
+                }, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE);
 
         initData();
 
