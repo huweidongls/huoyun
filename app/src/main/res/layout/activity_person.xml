@@ -204,6 +204,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_chang"
                     android:layout_marginLeft="10dp"
                     android:layout_toLeftOf="@+id/tv_cm1"
                     android:layout_toRightOf="@+id/tv_chang"
@@ -240,6 +241,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_kuan"
                     android:layout_marginLeft="10dp"
                     android:layout_toLeftOf="@+id/tv_cm2"
                     android:layout_toRightOf="@+id/tv_kuan"
@@ -276,6 +278,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_gao"
                     android:layout_marginLeft="10dp"
                     android:layout_toLeftOf="@+id/tv_cm3"
                     android:layout_toRightOf="@+id/tv_gao"
@@ -424,6 +427,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_sure"
         android:text="确认"
         android:layout_marginTop="26dp"
         android:layout_gravity="center_horizontal"

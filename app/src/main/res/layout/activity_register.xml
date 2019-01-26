@@ -149,6 +149,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:inputType="textVisiblePassword"
             android:id="@+id/et_pwd"
             android:textSize="17dp"
             android:layout_marginLeft="20dp"
@@ -266,6 +267,7 @@
         android:layout_height="1dp"/>
 
     <TextView
+        android:id="@+id/tv_register"
         android:background="@drawable/bg_login"
         android:textSize="14sp"
         android:textColor="#101010"

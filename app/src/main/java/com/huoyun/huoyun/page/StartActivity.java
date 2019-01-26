@@ -25,6 +25,9 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 判断本地有信息跳main，无信息跳登录
+     */
     private void initData() {
 
         Timer timer = new Timer();

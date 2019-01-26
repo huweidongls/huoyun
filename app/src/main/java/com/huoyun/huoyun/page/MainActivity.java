@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.huoyun.huoyun.R;
 import com.huoyun.huoyun.adapter.MainAdapter;
+import com.huoyun.huoyun.service.UploadLocationService;
 import com.huoyun.huoyun.util.SpUtils;
 
 import java.util.ArrayList;
@@ -76,9 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 if(isJiedan){
                     Glide.with(context).load(R.mipmap.off).into(ivJiedan);
                     isJiedan = false;
+                    //关闭上传定位服务
+                    Intent intent2 = new Intent(context, UploadLocationService.class);
+                    stopService(intent2);
                 }else {
                     Glide.with(context).load(R.mipmap.on).into(ivJiedan);
                     isJiedan = true;
+                    //开启上传定位服务
+                    Intent intent1 = new Intent(context, UploadLocationService.class);
+                    startService(intent1);
                 }
                 break;
             case R.id.btn_person_info:
@@ -86,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.btn_modify_pwd:
-
+                intent.setClass(context, ModifyPwdActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_exit:
                 SpUtils.clear(context);

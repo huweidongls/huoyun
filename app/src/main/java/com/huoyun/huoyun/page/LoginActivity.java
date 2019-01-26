@@ -13,6 +13,8 @@ import com.huoyun.huoyun.R;
 import com.huoyun.huoyun.util.SpUtils;
 import com.huoyun.huoyun.util.ToastUtil;
 import com.huoyun.huoyun.util.WeiboDialogUtils;
+import com.vise.xsnow.http.ViseHttp;
+import com.vise.xsnow.http.callback.ACallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,6 +60,34 @@ public class LoginActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(phoneNum)||TextUtils.isEmpty(pwd)){
                     ToastUtil.showLong(context, "电话号或密码不能为空");
                 }else {
+                    //走接口样式，后边就不写了
+//                    ViseHttp.POST("url")
+//                            .addParam("参数名", "参数")
+//                            .addParam("参数名", "参数")
+//                            .request(new ACallback<String>() {
+//                                @Override
+//                                public void onSuccess(String data) {
+//                                    //data为返回的数据，当前方法线程为主线程
+//                                }
+//
+//                                @Override
+//                                public void onFail(int errCode, String errMsg) {
+//
+//                                }
+//                            });
+                    //GET样式
+//                    ViseHttp.GET("url")
+//                            .request(new ACallback<String>() {
+//                                @Override
+//                                public void onSuccess(String data) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onFail(int errCode, String errMsg) {
+//
+//                                }
+//                            });
                     SpUtils.setLoginInfo(context, phoneNum);
                     ToastUtil.showLong(context, "登录成功");
                     intent.setClass(context, MainActivity.class);

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.huoyun.huoyun.R;
 import com.huoyun.huoyun.app.MyApp;
@@ -20,6 +21,10 @@ public class ForgetPwdActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_yzm)
     Button btnYzm;
+    @BindView(R.id.et_phone_num)
+    EditText etPhoneNum;
+    @BindView(R.id.et_yzm)
+    EditText etYzm;
 
     public Button getCode_btn() {
         return btnYzm;
@@ -43,11 +48,16 @@ public class ForgetPwdActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.btn_next:
+                String phoneNum = etPhoneNum.getText().toString();
+                String yzm = etYzm.getText().toString();
+                //验证验证码是否正确，正确则跳页
                 intent.setClass(context, SurePwdActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.btn_yzm:
                 MyApp.ftptimecount.start();
+                //走获取验证码接口
                 break;
         }
     }

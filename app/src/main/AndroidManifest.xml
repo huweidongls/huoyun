@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".page.MainActivity" />
-        <activity android:name=".page.LoginActivity"/>
+        <activity android:name=".page.LoginActivity" />
         <activity android:name=".page.ForgetPwdActivity" />
         <activity android:name=".page.SurePwdActivity" />
         <activity android:name=".page.RegisterActivity" />
@@ -68,7 +68,7 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="ovbH9tDk74DcpRTv59n1zEOkRrmdSPf2" />
+            android:value="0n0WfXDafYeu4GAzKfdo5RAsayMjclq3" />
 
         <service android:name=".service.UploadLocationService" />
         <service
@@ -76,6 +76,7 @@
             android:enabled="true"
             android:process=":remote" />
 
+        <activity android:name=".page.ModifyPwdActivity"></activity>
     </application>
 
 </manifest>

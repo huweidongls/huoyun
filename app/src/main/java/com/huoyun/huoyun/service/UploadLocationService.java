@@ -49,32 +49,28 @@ public class UploadLocationService extends Service {
             @Override
             public void run() {
 
-                String json = "";
-
-                ViseHttp.POST("/RoadprotectionLoggerApi/realTime")
-                        .setJson(json)
-                        .request(new ACallback<String>() {
-                            @Override
-                            public void onSuccess(String data) {
-                                try {
-                                    JSONObject jsonObject = new JSONObject(data);
-                                    if (jsonObject.getString("status").equals("SUCCESS")) {
-                                        Log.e("123123", "上报成功");
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
-                            @Override
-                            public void onFail(int errCode, String errMsg) {
-
-                            }
-                        });
+//                ViseHttp.POST("/RoadprotectionLoggerApi/realTime")
+//                        .addParam("参数", "经纬度参数")
+//                        .request(new ACallback<String>() {
+//                            @Override
+//                            public void onSuccess(String data) {
+//                                try {
+//                                    JSONObject jsonObject = new JSONObject(data);
+//                                    if (jsonObject.getString("status").equals("SUCCESS")) {
+//                                        Log.e("123123", "上报成功");
+//                                    }
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//
+//                            @Override
+//                            public void onFail(int errCode, String errMsg) {
+//
+//                            }
+//                        });
             }
-        }, 20000, 100000);
-
-        startLocate();
+        }, 1500, 15000);
 
     }
 
@@ -123,7 +119,7 @@ public class UploadLocationService extends Service {
         public void onReceiveLocation(BDLocation location) {
             latitude = location.getLatitude();
             longitude = location.getLongitude();
-            Log.e("123123", "lat" + location.getLatitude() + "long" + location.getLongitude());
+            Log.e("123123", "lat" + location.getLatitude() + "--long" + location.getLongitude());
 
         }
     }
