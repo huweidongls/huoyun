@@ -3,6 +3,7 @@ package com.huoyun.huoyun.page;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,11 @@ import com.huoyun.huoyun.R;
 import com.huoyun.huoyun.adapter.MainAdapter;
 import com.huoyun.huoyun.service.UploadLocationService;
 import com.huoyun.huoyun.util.SpUtils;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.vise.xsnow.permission.OnPermissionCallback;
 import com.vise.xsnow.permission.PermissionManager;
 
@@ -38,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rv;
     @BindView(R.id.iv_isjiedan)
     ImageView ivJiedan;
+    @BindView(R.id.refresh)
+    RefreshLayout refreshLayout;
 
     private MainAdapter adapter;
     private List<String> mList;
@@ -80,6 +88,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
+
+        refreshLayout.setRefreshHeader(new ClassicsHeader(context));
+        refreshLayout.setRefreshFooter(new ClassicsFooter(context));
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                refreshLayout.finishRefresh(1000);
+            }
+        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                refreshLayout.finishLoadMore(1000);
+            }
+        });
 
         LinearLayoutManager manager = new LinearLayoutManager(context);
         rv.setLayoutManager(manager);
