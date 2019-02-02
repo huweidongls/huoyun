@@ -4,66 +4,152 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:textColor="#101010"
-        android:textSize="18sp"
-        android:text="刘海栗"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <LinearLayout
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:background="#29CCA6"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
 
         <TextView
-            android:layout_gravity="center_vertical"
-            android:textColor="#101010"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:textColor="#ffffff"
             android:textSize="18sp"
-            android:text="接单"
+            android:text="刘海栗"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        
-        <ImageView
-            android:layout_marginTop="3dp"
-            android:id="@+id/iv_isjiedan"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/off"
-            android:layout_width="37dp"
-            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:text="接单"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:id="@+id/iv_isjiedan"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/off"
+                android:layout_width="37dp"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <Button
+    <RelativeLayout
         android:id="@+id/btn_person_info"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="个人信息"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="60dp">
 
-    <Button
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon1"
+                android:layout_width="18dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textColor="#333333"
+                android:layout_marginLeft="20dp"
+                android:text="个人信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    
+    <View
+        android:background="#e1e1e1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <RelativeLayout
         android:id="@+id/btn_modify_pwd"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="修改密码"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="60dp">
 
-    <Button
-        android:id="@+id/btn_exit"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="退出登录"
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon2"
+                android:layout_width="18dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textColor="#333333"
+                android:layout_marginLeft="20dp"
+                android:text="修改密码"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:background="#e1e1e1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="1dp"/>
+
+    <RelativeLayout
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon3"
+                android:layout_width="18dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textColor="#333333"
+                android:layout_marginLeft="20dp"
+                android:text="退出登录"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:background="#e1e1e1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
 </LinearLayout>

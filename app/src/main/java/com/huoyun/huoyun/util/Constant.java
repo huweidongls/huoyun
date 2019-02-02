@@ -6,6 +6,6 @@ package com.huoyun.huoyun.util;
 
 public class Constant {
 
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "http://www.gongyingyun.cn/";
 
 }

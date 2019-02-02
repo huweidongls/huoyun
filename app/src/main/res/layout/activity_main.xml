@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:background="#f2f2f2"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="55dp">
 
@@ -24,7 +24,7 @@
 
                 <ImageView
                     android:layout_centerInParent="true"
-                    android:src="@mipmap/my"
+                    android:src="@mipmap/person"
                     android:layout_width="24dp"
                     android:layout_height="24dp" />
 
@@ -34,11 +34,16 @@
                 android:layout_centerInParent="true"
                 android:textColor="#101010"
                 android:textSize="18sp"
-                android:text="供应链"
+                android:text="供应云"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
         </RelativeLayout>
+
+        <View
+            android:background="#f2f2f2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/refresh"

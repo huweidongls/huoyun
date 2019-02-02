@@ -4,6 +4,7 @@ package com.huoyun.huoyun.util;
  * Created by Administrator on 2018/7/13.
  */
 
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -52,7 +53,7 @@ public class FTPTimeCount extends CountDownTimer {
         // 创建一个 SpannableString对象
         msp = new SpannableString("重新发送" + timeInt + "秒");
 
-        activity.getCode_btn().setTextColor(activity.getResources().getColor(R.color.black_333333));
+        activity.getCode_btn().setTextColor(Color.parseColor("#1FAE98"));
         activity.getCode_btn().setText(msp);
     }
 

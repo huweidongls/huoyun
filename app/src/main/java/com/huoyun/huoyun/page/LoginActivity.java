@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -61,26 +62,13 @@ public class LoginActivity extends AppCompatActivity {
                     ToastUtil.showLong(context, "电话号或密码不能为空");
                 }else {
                     //走接口样式，后边就不写了
-//                    ViseHttp.POST("url")
-//                            .addParam("参数名", "参数")
-//                            .addParam("参数名", "参数")
+//                    ViseHttp.POST("api/ps/getOrders.html")
+//                            .addParam("id", "2")
 //                            .request(new ACallback<String>() {
 //                                @Override
 //                                public void onSuccess(String data) {
 //                                    //data为返回的数据，当前方法线程为主线程
-//                                }
-//
-//                                @Override
-//                                public void onFail(int errCode, String errMsg) {
-//
-//                                }
-//                            });
-                    //GET样式
-//                    ViseHttp.GET("url")
-//                            .request(new ACallback<String>() {
-//                                @Override
-//                                public void onSuccess(String data) {
-//
+//                                    Log.e("123123", data);
 //                                }
 //
 //                                @Override
